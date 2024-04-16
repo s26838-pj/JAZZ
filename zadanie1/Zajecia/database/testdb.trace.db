@@ -1,0 +1,25 @@
+2024-04-15 19:43:05.698437+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "OURCUSTOMERS" nie istnieje
+Table "OURCUSTOMERS" not found; SQL statement:
+CREATE TABLE IF NOT EXISTS rentBike (
+    id UUID PRIMARY KEY,
+    customer_id UUID REFERENCES ourCustomers(id),
+    bike_id UUID REFERENCES ourBikes(id),
+    rentalStart TIMESTAMP,
+    rentalEnd TIMESTAMP
+) [42102-224]
+2024-04-15 19:48:24.857720+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "OUR_CUSTOMERS" nie istnieje
+Table "OUR_CUSTOMERS" not found; SQL statement:
+SELECT * FROM OUR_CUSTOMERS [42102-224]
+2024-04-16 18:59:19.009397+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "[*]POST /bike-rents\000d\000aContent-Type: application/json\000d\000a\000d\000a \000d\000a  ""bikeId"": ""f5d8bce1-6e41-4c17-9f94-34f18b95c4fc"",\000d\000a  ""rentalStart"": ""2024-04-15T10:00:00"",\000d\000a  ""rentalEnd"": ""2024-04-15T12:00:00""\000d\000a "; oczekiwano "PREPARE"
+Syntax error in SQL statement "[*]POST /bike-rents\000d\000aContent-Type: application/json\000d\000a\000d\000a \000d\000a  ""bikeId"": ""f5d8bce1-6e41-4c17-9f94-34f18b95c4fc"",\000d\000a  ""rentalStart"": ""2024-04-15T10:00:00"",\000d\000a  ""rentalEnd"": ""2024-04-15T12:00:00""\000d\000a "; expected "PREPARE"; SQL statement:
+POST /bike-rents
+Content-Type: application/json
+
+ 
+  "bikeId": "f5d8bce1-6e41-4c17-9f94-34f18b95c4fc",
+  "rentalStart": "2024-04-15T10:00:00",
+  "rentalEnd": "2024-04-15T12:00:00"
+  [42001-224]
