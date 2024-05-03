@@ -1,0 +1,208 @@
+2024-04-15 19:43:05.698437+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "OURCUSTOMERS" nie istnieje
+Table "OURCUSTOMERS" not found; SQL statement:
+CREATE TABLE IF NOT EXISTS rentBike (
+    id UUID PRIMARY KEY,
+    customer_id UUID REFERENCES ourCustomers(id),
+    bike_id UUID REFERENCES ourBikes(id),
+    rentalStart TIMESTAMP,
+    rentalEnd TIMESTAMP
+) [42102-224]
+2024-04-15 19:48:24.857720+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "OUR_CUSTOMERS" nie istnieje
+Table "OUR_CUSTOMERS" not found; SQL statement:
+SELECT * FROM OUR_CUSTOMERS [42102-224]
+2024-04-16 18:59:19.009397+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "[*]POST /bike-rents\000d\000aContent-Type: application/json\000d\000a\000d\000a \000d\000a  ""bikeId"": ""f5d8bce1-6e41-4c17-9f94-34f18b95c4fc"",\000d\000a  ""rentalStart"": ""2024-04-15T10:00:00"",\000d\000a  ""rentalEnd"": ""2024-04-15T12:00:00""\000d\000a "; oczekiwano "PREPARE"
+Syntax error in SQL statement "[*]POST /bike-rents\000d\000aContent-Type: application/json\000d\000a\000d\000a \000d\000a  ""bikeId"": ""f5d8bce1-6e41-4c17-9f94-34f18b95c4fc"",\000d\000a  ""rentalStart"": ""2024-04-15T10:00:00"",\000d\000a  ""rentalEnd"": ""2024-04-15T12:00:00""\000d\000a "; expected "PREPARE"; SQL statement:
+POST /bike-rents
+Content-Type: application/json
+
+ 
+  "bikeId": "f5d8bce1-6e41-4c17-9f94-34f18b95c4fc",
+  "rentalStart": "2024-04-15T10:00:00",
+  "rentalEnd": "2024-04-15T12:00:00"
+  [42001-224]
+2024-04-30 13:51:16.927602+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "[*]POST /bike-rents\000d\000aContent-Type: application/json\000d\000a\000d\000a \000d\000a    ""id"": ""8bb36690-0137-4c08-a2b9-61dbcb9b0fb1"",\000d\000a    ""rentalStart"": ""2024-04-15T10:00:00"",\000d\000a    ""rentalEnd"": ""2024-04-15T12:00:00""\000d\000a "; oczekiwano "PREPARE"
+Syntax error in SQL statement "[*]POST /bike-rents\000d\000aContent-Type: application/json\000d\000a\000d\000a \000d\000a    ""id"": ""8bb36690-0137-4c08-a2b9-61dbcb9b0fb1"",\000d\000a    ""rentalStart"": ""2024-04-15T10:00:00"",\000d\000a    ""rentalEnd"": ""2024-04-15T12:00:00""\000d\000a "; expected "PREPARE"; SQL statement:
+POST /bike-rents
+Content-Type: application/json
+
+ 
+    "id": "8bb36690-0137-4c08-a2b9-61dbcb9b0fb1",
+    "rentalStart": "2024-04-15T10:00:00",
+    "rentalEnd": "2024-04-15T12:00:00"
+  [42001-224]
+2024-04-30 13:52:23.499047+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "RENTBIKE" not found (this database is empty); SQL statement:
+INSERT INTO rentBike (id, rentalStart, rentalEnd)
+VALUES ('8bb36690-0137-4c08-a2b9-61dbcb9b0fb1', '2024-04-15 10:00:00', '2024-04-15 12:00:00') [42104-224]
+2024-04-30 14:31:28.415658+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "OURCUSTOMERS" nie istnieje
+Table "OURCUSTOMERS" not found; SQL statement:
+CREATE TABLE rentBike (
+    id UUID PRIMARY KEY,
+    customer_id UUID,
+    bike_id UUID,
+    rentalStart TIMESTAMP,
+    rentalEnd TIMESTAMP,
+    FOREIGN KEY (customer_id) REFERENCES ourCustomers(id),
+    FOREIGN KEY (bike_id) REFERENCES ourBikes(id)
+) [42102-224]
+2024-04-30 14:31:53.871789+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "OURBIKES" nie istnieje
+Table "OURBIKES" not found; SQL statement:
+CREATE TABLE rentBike (
+    id UUID PRIMARY KEY,
+    customer_id UUID,
+    bike_id UUID,
+    rentalStart TIMESTAMP,
+    rentalEnd TIMESTAMP,
+    FOREIGN KEY (bike_id) REFERENCES ourBikes(id)
+) [42102-224]
+2024-04-30 14:32:01.652882+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "CREATE TABLE rentBike (\000d\000a    id UUID PRIMARY KEY,\000d\000a    customer_id UUID,\000d\000a    bike_id UUID,\000d\000a    rentalStart TIMESTAMP,\000d\000a    rentalEnd TIMESTAMP,\000d\000a[*])"; oczekiwano "identifier"
+Syntax error in SQL statement "CREATE TABLE rentBike (\000d\000a    id UUID PRIMARY KEY,\000d\000a    customer_id UUID,\000d\000a    bike_id UUID,\000d\000a    rentalStart TIMESTAMP,\000d\000a    rentalEnd TIMESTAMP,\000d\000a[*])"; expected "identifier"; SQL statement:
+CREATE TABLE rentBike (
+    id UUID PRIMARY KEY,
+    customer_id UUID,
+    bike_id UUID,
+    rentalStart TIMESTAMP,
+    rentalEnd TIMESTAMP,
+) [42001-224]
+2024-04-30 14:36:41.977154+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "[*]ID"; oczekiwano "INSERT"
+Syntax error in SQL statement "[*]ID"; expected "INSERT"; SQL statement:
+ID [42001-224]
+2024-04-30 14:41:23.133905+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "NON_EXISTING_TABLE" nie istnieje
+Table "NON_EXISTING_TABLE" not found; SQL statement:
+SELECT * FROM non_existing_table [42102-224]
+2024-04-30 14:42:45.999575+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "DELETE [*]* FROM RENTBIKE ID"; oczekiwano "identifier"
+Syntax error in SQL statement "DELETE [*]* FROM RENTBIKE ID"; expected "identifier"; SQL statement:
+DELETE * FROM RENTBIKE ID [42001-224]
+2024-04-30 14:44:44.390055+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "BIKE_RENT" nie istnieje
+Table "BIKE_RENT" not found; SQL statement:
+INSERT INTO bike_rent (customer_id, bike_id, rental_start, rental_end) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363ef3) [42102-224]
+2024-04-30 14:44:54.766846+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "BIKERENT" nie istnieje
+Table "BIKERENT" not found; SQL statement:
+INSERT INTO BIKERENT (customer_id, bike_id, rental_start, rental_end) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363ef3) [42102-224]
+2024-04-30 14:44:56.480318+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "BIKERENT" nie istnieje
+Table "BIKERENT" not found; SQL statement:
+INSERT INTO BIKERENT (customer_id, bike_id, rental_start, rental_end) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363ef3) [42102-224]
+2024-04-30 14:45:23.485200+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Kolumna "RENTAL_START" nie istnieje
+Column "RENTAL_START" not found; SQL statement:
+INSERT INTO RENTBIKE (customer_id, bike_id, rental_start, rental_end) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363ef3) [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:759)
+	at org.h2.command.Parser.parseColumn(Parser.java:1190)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1175)
+	at org.h2.command.Parser.parseInsert(Parser.java:1549)
+	at org.h2.command.Parser.parsePrepared(Parser.java:719)
+	at org.h2.command.Parser.parse(Parser.java:592)
+	at org.h2.command.Parser.parse(Parser.java:564)
+	at org.h2.command.Parser.prepareCommand(Parser.java:483)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp.query(WebApp.java:1119)
+	at org.h2.server.web.WebApp.process(WebApp.java:245)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:177)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-04-30 14:45:45.353218+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363[*]ef3)"; oczekiwano "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363[*]ef3)"; expected "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363ef3) [42001-224]
+2024-04-30 14:46:57.451910+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend, ID) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363[*]ef3)"; oczekiwano "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend, ID) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363[*]ef3)"; expected "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend, ID) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363ef3) [42001-224]
+2024-04-30 14:46:58.875873+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend, ID) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363[*]ef3)"; oczekiwano "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend, ID) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363[*]ef3)"; expected "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend, ID) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363ef3) [42001-224]
+2024-04-30 14:46:59.411597+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend, ID) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363[*]ef3)"; oczekiwano "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend, ID) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363[*]ef3)"; expected "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend, ID) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363ef3) [42001-224]
+2024-04-30 14:46:59.605299+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend, ID) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363[*]ef3)"; oczekiwano "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend, ID) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363[*]ef3)"; expected "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend, ID) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363ef3) [42001-224]
+2024-04-30 14:46:59.787505+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend, ID) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363[*]ef3)"; oczekiwano "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend, ID) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363[*]ef3)"; expected "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend, ID) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363ef3) [42001-224]
+2024-04-30 14:47:00.006530+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend, ID) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363[*]ef3)"; oczekiwano "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend, ID) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363[*]ef3)"; expected "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend, ID) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', aee325ae-b055-4979-908e-316951363ef3) [42001-224]
+2024-04-30 14:47:58.322195+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Błąd konwersji danych "1144 (RENTBIKE: ""CUSTOMER_ID"" UUID)"
+Data conversion error converting "1144 (RENTBIKE: ""CUSTOMER_ID"" UUID)"; SQL statement:
+INSERT INTO RENTBIKE (customer_id, bike_id, rentalstart, rentalend, ID) VALUES (1144, 0001, '2024-04-15 10:00:00', '2024-04-15 12:00:00', 'aee325ae-b055-4979-908e-316951363ef3') [22018-224]
+2024-04-30 14:52:17.493019+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "SELECT * [*]OURCUSTOMERS"
+Syntax error in SQL statement "SELECT * [*]OURCUSTOMERS"; SQL statement:
+SELECT * OURCUSTOMERS [42000-224]
+2024-04-30 14:52:33.529626+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "SELECT [*][*] OURCUSTOMERS"; oczekiwano "DISTINCT, ALL, *, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "SELECT [*][*] OURCUSTOMERS"; expected "DISTINCT, ALL, *, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+SELECT [*] OURCUSTOMERS [42001-224]
+2024-04-30 14:53:39.296935+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "SELECT * [*]RENTBIKE"
+Syntax error in SQL statement "SELECT * [*]RENTBIKE"; SQL statement:
+SELECT * RENTBIKE [42000-224]
+2024-05-01 12:10:08.316357+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "[*]RENTBIKE"; oczekiwano "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE, REFRESH"
+Syntax error in SQL statement "[*]RENTBIKE"; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE, REFRESH"; SQL statement:
+RENTBIKE [42001-224]
