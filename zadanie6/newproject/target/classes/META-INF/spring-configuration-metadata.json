@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "security.config",
+      "type": "com.example.newproject.Config.SecurityConfig",
+      "sourceType": "com.example.newproject.Config.SecurityConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "security.config.frontend-redirect-url",
+      "type": "java.lang.String",
+      "sourceType": "com.example.newproject.Config.SecurityConfig"
+    }
+  ],
+  "hints": []
+}
